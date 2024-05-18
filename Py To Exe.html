@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:58950/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title _msttexthash="5334732" _msthash="0">自动Py To Exe</title>
+        <script>
+            // Provided for type checking
+            window.eel = {
+                initialise: () => ({
+                    filename: null,
+                    options: [],
+                    suppliedUiConfiguration: {},
+                    warnings: [],
+                    pathSeparator: '',
+                    defaultOutputFolder: '',
+                    languageHint: ''
+                }),
+                does_file_exist: (path) => false,
+                does_folder_exist: (path) => false,
+                ask_file: (file_type) => "",
+                ask_files: () => [],
+                ask_folder: () => "",
+                is_file_an_ico: (file_path) => null,
+                open_output_in_explorer: (output_directory, input_filename, is_one_file) => {},
+                will_packaging_overwrite_existing: (file_path, manual_name, one_file, output_folder) => true,
+                package: (command, non_pyinstaller_options) => {},
+                import_configuration: () => {},
+                export_configuration: (configuration) => {}
+            }
+        </script>
+        <script type="text/javascript" src="./Py To Exe_files/eel.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/constants.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/i18n.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/initialise.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/configuration.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/staticEvents.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/interface.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/utils.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/modal.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/messages.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/packaging.js.下载"></script>
+        <script type="text/javascript" src="./Py To Exe_files/importExport.js.下载"></script>
+        <link rel="stylesheet" href="./Py To Exe_files/general.css">
+        <link rel="stylesheet" href="./Py To Exe_files/main.css">
+        <link rel="stylesheet" href="./Py To Exe_files/modal.css">
+    
+<style>
+#clip_copy,#web-copy-btn-wk{
+   background:#54aae9 !important
+}
+</style>
+</head>
+
+    <body>
+        <div class="mid">
+            <div id="header">
+                <div class="title">
+                    <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><img src="./Py To Exe_files/favicon.ico"></a>
+                    <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><h1 _msttexthash="8310354" _msthash="1">自动 Py 到 Exe</h1></a>
+                </div>
+                <div class="extra-links">
+                    <span id="theme">
+                        <img src="./Py To Exe_files/sun.svg" id="on-dark-theme-button" style="display: none;">
+                        <img src="./Py To Exe_files/moon.svg" id="on-light-theme-button" style="display: inline;">
+                    </span>
+                    <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank">
+                        <span _msttexthash="3448614" _msthash="3">GitHub上</span>
+                        <img src="./Py To Exe_files/favicon.png" alt="GitHub 网站图标" _mstalt="227097" _msthash="2">
+                    </a>
+                    <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&amp;utm_medium=application_link&amp;utm_campaign=auto_py_to_exe_help&amp;utm_content=top" target="_blank" _msthidden="3">
+                        <span data-i18n="ui.links.helpPost" _msttexthash="10251696" _msthash="5">帮助帖子</span>
+                        <img src="./Py To Exe_files/favicon-384x384.png" alt="硝酸酌鱼图标" _mstalt="23575721" _msthash="4">
+                    </a>
+                    <span _msthidden="3">
+                        <label for="language-selection" _msttexthash="14574625" _msthash="6"><small data-i18n="ui.title.language" _istranslated="1">语言</small><small _istranslated="1">：</small></label>
+                        <select id="language-selection"><option value="ar" _msttexthash="2547805" _msthash="175">阿拉伯语 （العربية）</option><option value="pt_br" _msttexthash="1459965" _msthash="174">巴西葡萄牙语 （Português Brasileiro）</option><option value="bg" _msttexthash="2806895" _msthash="173">保加利亚语 （Български）</option><option value="zh" _msttexthash="33993323" _msthash="172">Chinese Simplified （简体中文）</option><option value="zh_tw" _msttexthash="42326791" _msthash="171">繁體中文 （繁體中文）</option><option value="cs" _msttexthash="304785" _msthash="170">捷克语 （Čeština）</option><option value="nl" _msttexthash="313456" _msthash="169">荷兰语（荷兰）</option><option value="en" _msttexthash="94341" _msthash="168">英语</option><option value="fi" _msttexthash="417495" _msthash="167">芬兰语 （Suomen kieli）</option><option value="fr" _msttexthash="309374" _msthash="166">法语（法语）</option><option value="de" _msttexthash="253903" _msthash="165">德语 （Deutsch）</option><option value="el" _msttexthash="1703351" _msthash="164">希腊语 （Ελληνικά）</option><option value="id" _msttexthash="674206" _msthash="163">印尼语（印尼语）</option><option value="it" _msttexthash="310375" _msthash="162">意大利语 （Italiano）</option><option value="ja" _msttexthash="19696222" _msthash="161">Japanese （日本語）</option><option value="ko" _msttexthash="29217240" _msthash="160">韩语 （한국어）</option><option value="fa" _msttexthash="1903967" _msthash="159">波斯语 （فارسی）</option><option value="pl" _msttexthash="230256" _msthash="158">波兰语 （Polski）</option><option value="ru" _msttexthash="1887288" _msthash="157">俄语 （Русский）</option><option value="sr" _msttexthash="256633" _msthash="156">塞尔维亚语（塞族）</option><option value="es" _msttexthash="317083" _msthash="155">西班牙语（西班牙语）</option><option value="es_419" _msttexthash="1002170" _msthash="154">西班牙语拉丁美洲 （Español Latam）</option><option value="th" _msttexthash="5009303" _msthash="153">泰语 （ภาษาไทย）</option><option value="tr" _msttexthash="318409" _msthash="152">土耳其语（Türkçe）</option><option value="uk" _msttexthash="3187639" _msthash="151">乌克兰语 （Українська）</option><option value="vi" _msthidden="93" _msttexthash="4989868" _msthash="150">越南语 （Tiếng Việt）</option></select>
+                    </span>
+                </div>
+            </div>
+
+            <div id="warnings"></div>
+
+            <div>
+                <h2 data-i18n="ui.title.scriptLocation" _msttexthash="12370475" _msthash="7">脚本位置</h2>
+                <div class="filepath-browse-layout">
+                    <input id="entry-script" placeholder="文件路径" required="" data-i18n_placeholder="ui.placeholders.pathToFile" _mstplaceholder="11897392" _msthash="8" style="border: 1px solid rgb(244, 67, 54);">
+                    <button id="entry-script-search" data-i18n="ui.button.browse" _msttexthash="6214741" _msthash="9">浏览</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>
+                    <font _mstmutation="1" _msttexthash="44804331" _msthash="10"><span data-i18n="ui.title.oneFile" _mstmutation="1" _istranslated="1" _msttexthash="7009405" _msthash="75">单文件</span> <small _mstmutation="1" _istranslated="1">（--onedir / --onefile）</small></font>
+                </h2>
+                <div>
+                    <button id="one-directory-button" class="large" data-i18n="ui.button.oneDirectory" _msttexthash="7963072" _msthash="11">单目录</button>
+                    <button id="one-file-button" class="large unselected" data-i18n="ui.button.oneFile" _msttexthash="7009405" _msthash="12">单文件</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>
+                    <font _mstmutation="1" _msttexthash="52922155" _msthash="13"><span data-i18n="ui.title.consoleWindow" _mstmutation="1" _istranslated="1" _msttexthash="14175096" _msthash="76">控制台窗口</span> <small _mstmutation="1" _istranslated="1">（--console / --windowed）</small></font>
+                </h2>
+                <div>
+                    <button id="console-based-button" class="large" data-i18n="ui.button.consoleBased" _msttexthash="17667533" _msthash="14">基于控制台的</button>
+                    <button id="window-based-button" class="large unselected" data-i18n="ui.button.windowBased" _msttexthash="41808364" _msthash="15">基于窗口的 (隐藏控制台)</button>
+                </div>
+            </div>
+
+            <div id="section-icon">
+                <div class="header noselect" onclick="expandSection(&#39;icon&#39;)">
+                    <img src="./Py To Exe_files/chevron-square-up.svg" alt="图标部分 Chevron" _mstalt="377520" _msthash="16">
+                    <h2>
+                        <font _mstmutation="1" _msttexthash="26102050" _msthash="17"><span data-i18n="ui.title.icon" _mstmutation="1" _istranslated="1" _msttexthash="4796194" _msthash="77">图标</span> <small _mstmutation="1" _istranslated="1">（--icon）</small></font>
+                    </h2>
+                </div>
+                <div class="content" _msthidden="3">
+                    <div class="filepath-browse-layout" _msthidden="2">
+                        <input id="icon-path" placeholder="图标路径" data-i18n_placeholder="ui.placeholders.icoFile" _msthidden="A" _mstplaceholder="12226149" _msthash="18">
+                        <button id="icon-path-search" data-i18n="ui.button.browse" _msttexthash="6214741" _msthidden="1" _msthash="19">浏览</button>
+                    </div>
+                    <div _msthidden="1">
+                        <span id="icon-invalid-warning" style="display: none;" _msthidden="1"><font _mstmutation="1" _msttexthash="8878883" _msthidden="1" _msthash="20">
+                            ⚠️
+                            <span data-i18n="ui.notes.invalidIcoFormatWarning" _mstmutation="1" _msttexthash="62525957" _msthidden="1" _msthash="176">警告：此文件不是有效的 .ico 文件</span></font>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section-additional-files">
+                <div class="header noselect" onclick="expandSection(&#39;additional-files&#39;)">
+                    <img src="./Py To Exe_files/chevron-square-up.svg" alt="“附加文件”部分 雪佛龙" _mstalt="819806" _msthash="21">
+                    <h2>
+                        <font _mstmutation="1" _msttexthash="37860771" _msthash="22"><span data-i18n="ui.title.additionalFiles" _mstmutation="1" _istranslated="1" _msttexthash="11369163" _msthash="78">附加文件</span> <small _mstmutation="1" _istranslated="1">（--add-data）</small></font>
+                    </h2>
+                </div>
+                <div class="content" _msthidden="5">
+                    <div id="datas-add-buttons" _msthidden="3">
+                        <button id="additional-files-add-files-button" data-i18n="ui.button.addFiles" _msttexthash="10430680" _msthidden="1" _msthash="23">添加文件</button>
+                        <button id="additional-files-add-folder" data-i18n="ui.button.addFolder" _msttexthash="11496745" _msthidden="1" _msthash="24">添加目录</button>
+                        <button id="additional-files-add-blank" data-i18n="ui.button.addBlank" _msttexthash="12373621" _msthidden="1" _msthash="25">添加空白</button>
+                    </div>
+                    <div id="datas-list"></div>
+                    <p id="onefileAdditionalFilesNote" class="note" style="display: none;" data-i18n="ui.notes.oneFileAdditionalFilesNote" _msttexthash="7168850" _msthidden="1" _msthash="26"><font _mstmutation="1" _msttexthash="79046500" _msthidden="1" _msthash="177">使用单文件模式的附加文件时要小心;
+</font><a href="https://stackoverflow.com/a/13790741/" target="_blank" style="text-decoration: none;" _msttexthash="116714" _msthidden="1" _msthash="178">read this</a><font _mstmutation="1" _msttexthash="42570281" _msthidden="1" _msthash="179">
+并更新您的代码以使用PyInstaller。</font></p>
+                    <p class="note" data-i18n="ui.notes.rootDirectory" _msttexthash="166437869" _msthidden="1" _msthash="27">如果要将文件放到根目录中，请在目标目录中输入句点(.)。</p>
+                </div>
+            </div>
+
+            <div id="section-advanced">
+                <div class="header noselect" onclick="expandSection(&#39;advanced&#39;)">
+                    <img src="./Py To Exe_files/chevron-square-up.svg" alt="高级部分雪佛龙" _mstalt="517868" _msthash="28">
+                    <h2 data-i18n="ui.title.advanced" _msttexthash="6979232" _msthash="29">高级</h2>
+                </div>
+                <div class="content"><div _msthidden="3"><h3 class="noselect" data-i18n="dynamic.title.generalOptions" _msthidden="1" _msttexthash="15251223" _msthash="149">常规选项</h3><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="65598" _msthidden="1" _msthash="148">--name</font><span title="Name to assign to the bundled app and spec file (default: first script&#39;s basename)" class="info_icon" _msthidden="87"></span></span><input placeholder="VALUE" _msthidden="A" _mstplaceholder="44395" _msthash="52"></div><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="444314" _msthidden="1" _msthash="147">--contents-directory</font><span title="For onedir builds only, specify the name of the directory in which all supporting files (i.e. everything except the executable itself) will be placed in. Use &quot;.&quot; to re-enable old onedir layout without contents directory." class="info_icon" _msthidden="85"></span></span><input placeholder="VALUE" _msthidden="A" _mstplaceholder="44395" _msthash="53"></div><div class="option-container input with-browse" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="119444" _msthidden="1" _msthash="146">--upx-dir</font><span title="Path to UPX utility (default: search the execution path)" class="info_icon" _msthidden="83"></span></span><input placeholder="VALUE" _msthidden="A" _mstplaceholder="44395" _msthash="54"><button data-i18n="dynamic.button.browseForFolder" _msthidden="1" _msttexthash="15149771" _msthash="145">浏览文件夹</button></div><div class="option-container switch" _msthidden="82"><span _msthidden="1"><font _mstmutation="1" _msttexthash="82563" _msthidden="1" _msthash="144">--clean</font><span title="Clean PyInstaller cache and remove temporary files before building." class="info_icon" _msthidden="81"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="143">开启</button></div><div class="option-container choice" _msthidden="80"><span _msthidden="1"><font _mstmutation="1" _msttexthash="162110" _msthidden="1" _msthash="142">--log-level</font><span title="Amount of detail in build-time console messages. LEVEL may be one of TRACE, DEBUG, INFO, WARN, DEPRECATION, ERROR, FATAL (default: INFO). Also settable via and overrides the PYI_LOG_LEVEL environment variable." class="info_icon" _msthidden="79"></span></span><select _msthidden="79"><option _msthidden="79"></option><option value="TRACE" _msthidden="1" _msttexthash="42354" _msthash="141">TRACE</option><option value="DEBUG" _msthidden="1" _msttexthash="42289" _msthash="140">DEBUG</option><option value="INFO" _msthidden="1" _msttexthash="33215" _msthash="139">INFO</option><option value="WARN" _msthidden="1" _msttexthash="34411" _msthash="138">WARN</option><option value="DEPRECATION" _msthidden="1" _msttexthash="127881" _msthash="137">DEPRECATION</option><option value="ERROR" _msthidden="1" _msttexthash="46397" _msthash="136">ERROR</option><option value="FATAL" _msthidden="1" _msttexthash="42276" _msthash="135">FATAL</option></select></div></div><div _msthidden="1"><h3 class="noselect" data-i18n="dynamic.title.whatToBundleWhereToSearch" _msthidden="1" _msttexthash="40635920" _msthash="134">捆绑什么，搜索哪里</h3><div class="option-container multiple-input" _msthidden="70"><span _msthidden="1"><font _mstmutation="1" _msttexthash="185250" _msthidden="1" _msthash="133">--add-binary</font><span title="Additional binary files to be added to the executable. See the ``--add-data`` option for the format. This option can be used multiple times." class="info_icon" _msthidden="69"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="69"></div></div><div class="option-container multiple-input" _msthidden="69"><span _msthidden="1"><font _mstmutation="1" _msttexthash="86736" _msthidden="1" _msthash="132">--paths</font><span title="A path to search for imports (like using PYTHONPATH). Multiple paths are allowed, separated by ``&#39;;&#39;``, or use this option multiple times. Equivalent to supplying the ``pathex`` argument in the spec file." class="info_icon" _msthidden="68"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="68"></div></div><div class="option-container multiple-input" _msthidden="68"><span _msthidden="1"><font _mstmutation="1" _msttexthash="271219" _msthidden="1" _msthash="131">--hidden-import</font><span title="Name an import not visible in the code of the script(s). This option can be used multiple times." class="info_icon" _msthidden="67"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="67"></div></div><div class="option-container multiple-input" _msthidden="67"><span _msthidden="1"><font _mstmutation="1" _msttexthash="438763" _msthidden="1" _msthash="130">--collect-submodules</font><span title="Collect all submodules from the specified package or module. This option can be used multiple times." class="info_icon" _msthidden="66"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="66"></div></div><div class="option-container multiple-input" _msthidden="66"><span _msthidden="1"><font _mstmutation="1" _msttexthash="232817" _msthidden="1" _msthash="129">--collect-data</font><span title="Collect all data from the specified package or module. This option can be used multiple times." class="info_icon" _msthidden="65"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="65"></div></div><div class="option-container multiple-input" _msthidden="65"><span _msthidden="1"><font _mstmutation="1" _msttexthash="359996" _msthidden="1" _msthash="128">--collect-binaries</font><span title="Collect all binaries from the specified package or module. This option can be used multiple times." class="info_icon" _msthidden="64"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="64"></div></div><div class="option-container multiple-input" _msthidden="64"><span _msthidden="1"><font _mstmutation="1" _msttexthash="207532" _msthidden="1" _msthash="127">--collect-all</font><span title="Collect all submodules, data files, and binaries from the specified package or module. This option can be used multiple times." class="info_icon" _msthidden="63"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="63"></div></div><div class="option-container multiple-input" _msthidden="63"><span _msthidden="1"><font _mstmutation="1" _msttexthash="266383" _msthidden="1" _msthash="126">--copy-metadata</font><span title="Copy metadata for the specified package. This option can be used multiple times." class="info_icon" _msthidden="62"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="62"></div></div><div class="option-container multiple-input" _msthidden="62"><span _msthidden="1"><font _mstmutation="1" _msttexthash="615056" _msthidden="1" _msthash="125">--recursive-copy-metadata</font><span title="Copy metadata for the specified package and all its dependencies. This option can be used multiple times." class="info_icon" _msthidden="61"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="61"></div></div><div class="option-container multiple-input" _msthidden="61"><span _msthidden="1"><font _mstmutation="1" _msttexthash="488605" _msthidden="1" _msthash="124">--additional-hooks-dir</font><span title="An additional path to search for hooks. This option can be used multiple times." class="info_icon" _msthidden="60"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="60"></div></div><div class="option-container multiple-input" _msthidden="60"><span _msthidden="1"><font _mstmutation="1" _msttexthash="241982" _msthidden="1" _msthash="123">--runtime-hook</font><span title="Path to a custom runtime hook file. A runtime hook is code that is bundled with the executable and is executed before any other code or module to set up special features of the runtime environment. This option can be used multiple times." class="info_icon" _msthidden="59"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="59"></div></div><div class="option-container multiple-input" _msthidden="59"><span _msthidden="1"><font _mstmutation="1" _msttexthash="297778" _msthidden="1" _msthash="122">--exclude-module</font><span title="Optional module or package (the Python name, not the path name) that will be ignored (as though it was not found). This option can be used multiple times." class="info_icon" _msthidden="58"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="58"></div></div><div class="option-container input with-browse" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="105729" _msthidden="1" _msthash="121">--splash</font><span title="(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application. The splash screen can display progress updates while unpacking." class="info_icon" _msthidden="56"></span></span><input placeholder="IMAGE_FILE" _msthidden="A" _mstplaceholder="110461" _msthash="57"><button data-i18n="dynamic.button.browseForFile" _msthidden="1" _msttexthash="11883508" _msthash="120">浏览文件</button></div></div><div _msthidden="55"><h3 class="noselect" data-i18n="dynamic.title.howToGenerate" _msthidden="1" _msttexthash="10968841" _msthash="119">如何生成</h3><div class="option-container choice" _msthidden="54"><span _msthidden="1"><font _mstmutation="1" _msttexthash="83278" _msthidden="1" _msthash="118">--debug</font><span title="Provide assistance with debugging a frozen
+application. This argument may be provided multiple
+times to select several of the following options.
+
+- all: All three of the following options.
+
+- imports: specify the -v option to the underlying
+  Python interpreter, causing it to print a message
+  each time a module is initialized, showing the
+  place (filename or built-in module) from which it
+  is loaded. See
+  https://docs.python.org/3/using/cmdline.html#id4.
+
+- bootloader: tell the bootloader to issue progress
+  messages while initializing and starting the
+  bundled app. Used to diagnose problems with
+  missing imports.
+
+- noarchive: instead of storing all frozen Python
+  source files as an archive inside the resulting
+  executable, store them as files in the resulting
+  output directory.
+
+" class="info_icon" _msthidden="53"></span></span><select _msthidden="53"><option _msthidden="53"></option><option value="all" _msthidden="1" _msttexthash="32695" _msthash="117">all</option><option value="imports" _msthidden="1" _msttexthash="102258" _msthash="116">imports</option><option value="bootloader" _msthidden="1" _msttexthash="159289" _msthash="115">bootloader</option><option value="noarchive" _msthidden="1" _msttexthash="137020" _msthash="114">noarchive</option></select></div><div class="option-container multiple-input" _msthidden="49"><span _msthidden="1"><font _mstmutation="1" _msttexthash="277784" _msthidden="1" _msthash="113">--python-option</font><span title="Specify a command-line option to pass to the Python interpreter at runtime. Currently supports &quot;v&quot; (equivalent to &quot;--debug imports&quot;), &quot;u&quot;, &quot;W &lt;warning control&gt;&quot;, &quot;X &lt;xoption&gt;&quot;, and &quot;hash_seed=&lt;value&gt;&quot;. For details, see the section &quot;Specifying Python Interpreter Options&quot; in PyInstaller manual." class="info_icon" _msthidden="48"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="48"></div></div><div class="option-container switch" _msthidden="48"><span _msthidden="1"><font _mstmutation="1" _msttexthash="88920" _msthidden="1" _msthash="112">--strip</font><span title="Apply a symbol-table strip to the executable and shared libs (not recommended for Windows)" class="info_icon" _msthidden="47"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="111">开启</button></div><div class="option-container switch" _msthidden="46"><span _msthidden="1"><font _mstmutation="1" _msttexthash="90558" _msthidden="1" _msthash="110">--noupx</font><span title="Do not use UPX even if it is available (works differently between Windows and *nix)" class="info_icon" _msthidden="45"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="109">开启</button></div><div class="option-container multiple-input" _msthidden="44"><span _msthidden="1"><font _mstmutation="1" _msttexthash="216086" _msthidden="1" _msthash="108">--upx-exclude</font><span title="Prevent a binary from being compressed when using upx. This is typically used if upx corrupts certain binaries during compression. FILE is the filename of the binary without path. This option can be used multiple times." class="info_icon" _msthidden="43"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="43"></div></div></div><div _msthidden="43"><h3 class="noselect" data-i18n="dynamic.title.windowsAndMacOsXSpecificOptions" _msthidden="1" _msttexthash="902395" _msthash="107">Windows And macOS X Specific Options</h3><div class="option-container choice" _msthidden="42"><span _msthidden="1"><font _mstmutation="1" _msttexthash="239122" _msthidden="1" _msthash="106">--hide-console</font><span title="Windows only: in console-enabled executable, have bootloader automatically hide or minimize the console window if the program owns the console window (i.e., was not launched from an existing console window)." class="info_icon" _msthidden="41"></span></span><select _msthidden="41"><option _msthidden="41"></option><option value="minimize-early" _msthidden="1" _msttexthash="254358" _msthash="105">minimize-early</option><option value="hide-late" _msthidden="1" _msttexthash="125697" _msthash="104">hide-late</option><option value="hide-early" _msthidden="1" _msttexthash="150774" _msthash="103">hide-early</option><option value="minimize-late" _msthidden="1" _msttexthash="223093" _msthash="102">minimize-late</option></select></div><div class="option-container switch" _msthidden="37"><span _msthidden="1"><font _mstmutation="1" _msttexthash="736229" _msthidden="1" _msthash="101">--disable-windowed-traceback</font><span title="Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled." class="info_icon" _msthidden="36"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="100">开启</button></div></div><div _msthidden="2"><h3 class="noselect" data-i18n="dynamic.title.windowsSpecificOptions" _msthidden="1" _msttexthash="26300716" _msthash="99">Windows特定选项</h3><div class="option-container input with-browse" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="238758" _msthidden="1" _msthash="98">--version-file</font><span title="Add a version resource from FILE to the exe." class="info_icon" _msthidden="30"></span></span><input placeholder="FILE" _msthidden="A" _mstplaceholder="31824" _msthash="62"><button data-i18n="dynamic.button.browseForFile" _msthidden="1" _msttexthash="11883508" _msthash="97">浏览文件</button></div><div class="option-container input with-browse" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="148421" _msthidden="1" _msthash="96">--manifest</font><span title="Add manifest FILE or XML to the exe." class="info_icon" _msthidden="27"></span></span><input placeholder="&lt;FILE or XML&gt;" _msthidden="A" _mstplaceholder="273143" _msthash="64"><button data-i18n="dynamic.button.browseForFile" _msthidden="1" _msttexthash="11883508" _msthash="95">浏览文件</button></div><div class="option-container multiple-input" _msthidden="26"><span _msthidden="1"><font _mstmutation="1" _msttexthash="149838" _msthidden="1" _msthash="94">--resource</font><span title="Add or update a resource to a Windows executable. The RESOURCE is one to four items, FILE[,TYPE[,NAME[,LANGUAGE]]]. FILE can be a data file or an exe/dll. For data files, at least TYPE and NAME must be specified. LANGUAGE defaults to 0 or may be specified as wildcard * to update all resources of the given TYPE and NAME. For exe/dll files, all resources from FILE will be added/updated to the final executable if TYPE, NAME and LANGUAGE are omitted or specified as wildcard *. This option can be used multiple times." class="info_icon" _msthidden="25"></span></span><img src="./Py To Exe_files/plus.svg"><div _msthidden="25"></div></div><div class="option-container switch" _msthidden="25"><span _msthidden="1"><font _mstmutation="1" _msttexthash="158249" _msthidden="1" _msthash="93">--uac-admin</font><span title="Using this option creates a Manifest that will request elevation upon application start." class="info_icon" _msthidden="24"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="92">开启</button></div><div class="option-container switch" _msthidden="23"><span _msthidden="1"><font _mstmutation="1" _msttexthash="238459" _msthidden="1" _msthash="91">--uac-uiaccess</font><span title="Using this option allows an elevated application to work with Remote Desktop." class="info_icon" _msthidden="22"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="90">开启</button></div></div><div _msthidden="4"><h3 class="noselect" data-i18n="dynamic.title.macOsxSpecificOptions" _msthidden="1" _msttexthash="24597001" _msthash="89">macOS X特定选项</h3><div class="option-container switch" _msthidden="16"><span _msthidden="1"><font _mstmutation="1" _msttexthash="303940" _msthidden="1" _msthash="88">--argv-emulation</font><span title="Enable argv emulation for macOS app bundles. If enabled, the initial open document/URL event is processed by the bootloader and the passed file paths or URLs are appended to sys.argv." class="info_icon" _msthidden="15"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msthidden="1" _msttexthash="4454424" _msthash="87">开启</button></div><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="537381" _msthidden="1" _msthash="86">--osx-bundle-identifier</font><span title="Mac OS .app bundle identifier is used as the default unique program name for code signing purposes. The usual form is a hierarchical name in reverse DNS notation. For example: com.mycompany.department.appname (default: first script&#39;s basename)" class="info_icon" _msthidden="12"></span></span><input placeholder="VALUE" _msthidden="A" _mstplaceholder="44395" _msthash="69"></div><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="474162" _msthidden="1" _msthash="85">--target-architecture</font><span title="Target architecture (macOS only; valid values: x86_64, arm64, universal2). Enables switching between universal2 and single-arch version of frozen application (provided python installation supports the target architecture). If not target architecture is not specified, the current running architecture is targeted." class="info_icon" _msthidden="10"></span></span><input placeholder="ARCH" _msthidden="A" _mstplaceholder="31642" _msthash="70"></div><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="401947" _msthidden="1" _msthash="84">--codesign-identity</font><span title="Code signing identity (macOS only). Use the provided identity to sign collected binaries and generated executable. If signing identity is not provided, ad-hoc signing is performed instead." class="info_icon" _msthidden="8"></span></span><input placeholder="IDENTITY" _msthidden="A" _mstplaceholder="85722" _msthash="71"></div><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="539578" _msthidden="1" _msthash="83">--osx-entitlements-file</font><span title="Entitlements file to use when code-signing the collected binaries (macOS only)." class="info_icon" _msthidden="6"></span></span><input placeholder="FILENAME" _msthidden="A" _mstplaceholder="78689" _msthash="72"></div></div><div _msthidden="1"><h3 class="noselect" data-i18n="dynamic.title.rarelyUsedSpecialOptions" _msthidden="1" _msttexthash="38841790" _msthash="82">很少使用的特殊选项</h3><div class="option-container input" _msthidden="1"><span _msthidden="1"><font _mstmutation="1" _msttexthash="303862" _msthidden="1" _msthash="81">--runtime-tmpdir</font><span title="Where to extract libraries and support files in `onefile`-mode. If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS. The ``_MEIxxxxxx``-folder will be created here. Please use this option only if you know what you are doing." class="info_icon" _msthidden="2"></span></span><input placeholder="PATH" _msthidden="A" _mstplaceholder="33228" _msthash="73"></div><div class="option-container switch" _msthidden="2"><span _msthidden="1"><font _mstmutation="1" _msttexthash="704262" _msthidden="1" _msthash="80">--bootloader-ignore-signals</font><span title="Tell the bootloader to ignore signals rather than forwarding them to the child process. Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice." class="info_icon" _msthidden="1"></span></span><button data-i18n="dynamic.button.enable" class="unselected" _msttexthash="4454424" _msthidden="1" _msthash="79">开启</button></div></div></div>
+            </div>
+
+            <div id="section-settings">
+                <div class="header noselect" onclick="expandSection(&#39;settings&#39;)">
+                    <img src="./Py To Exe_files/chevron-square-up.svg" alt="高级部分雪佛龙" _mstalt="517868" _msthash="30">
+                    <h2 data-i18n="ui.title.settings" _msttexthash="6648122" _msthash="31">设置</h2>
+                </div>
+                <div class="content" _msthidden="12">
+                    <div _msthidden="6">
+                        <h3 data-i18n="ui.title.specificOptions" _msttexthash="48205456" _msthidden="1" _msthash="32">auto-py-to-exe 特定的选项</h3>
+                        <div class="option-container input" _msthidden="3">
+                            <span _msthidden="1">
+                                <span data-i18n="ui.title.outputDirectory" _msttexthash="12957204" _msthidden="1" _msthash="33">输出路径</span>
+                                <span title="用于放置输出的目录。如果不存在，将创建该目录" class="info_icon" data-i18n_title="ui.helpText.outputDirectory"></span>
+                            </span>
+                            <div class="filepath-browse-layout" _msthidden="2">
+                                <input id="output-directory" placeholder="目录" data-i18n_placeholder="ui.placeholders.directory" _msthidden="A" _mstplaceholder="5308706" _msthash="34">
+                                <button id="output-directory-search" data-i18n="ui.button.browse" _msttexthash="6214741" _msthidden="1" _msthash="35">浏览</button>
+                            </div>
+                        </div>
+                        <div class="option-container switch" _msthidden="2">
+                            <span _msthidden="1">
+                                <span data-i18n="ui.title.increaseRecursionLimit" _msttexthash="20537504" _msthidden="1" _msthash="36">增加递归限制</span>
+                                <span title="启用此功能将使用sys.setrecursionlimit（5000）将递归限制设置为5000。" class="info_icon" data-i18n_title="ui.helpText.increaseRecursionLimit"></span>
+                            </span>
+                            <button id="recursion-limit-switch" data-i18n="ui.button.enable" _msttexthash="4454424" _msthidden="1" _msthash="37">开启</button>
+                        </div>
+                    </div>
+                    <div _msthidden="3">
+                        <h3 data-i18n="ui.title.manuallyProvideOptions" _msttexthash="21491314" _msthidden="1" _msthash="38">手动提供选项</h3>
+                        <div class="option-container input" _msthidden="2">
+                            <span _msthidden="1">
+                                <span data-i18n="ui.title.manualArgumentInput" _msttexthash="18881564" _msthidden="1" _msthash="39">手动参数输入</span>
+                                <span title="将原始文本插入到生成的命令中。" class="info_icon" data-i18n_title="ui.helpText.manualArgumentInput"></span>
+                            </span>
+                            <input id="raw-arguments" placeholder="参数" data-i18n_placeholder="ui.placeholders.arguments" _msthidden="A" _mstplaceholder="4651894" _msthash="40">
+                        </div>
+                    </div>
+                    <div _msthidden="3">
+                        <h3 data-i18n="ui.title.configuration" _msttexthash="6777615" _msthidden="1" _msthash="41">配置</h3>
+                        <button id="configuration-import" data-i18n="ui.button.importConfig" _msttexthash="32640816" _msthidden="1" _msthash="42">从JSON文件导入配置</button>
+                        <button id="configuration-export" data-i18n="ui.button.exportConfig" _msttexthash="29706846" _msthidden="1" _msthash="43">将配置导出到JSON文件</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="current-command">
+                <h2 data-i18n="ui.title.currentCommand" _msttexthash="9567922" _msthash="44">当前命令</h2>
+                <textarea readonly=""></textarea>
+            </div>
+
+            <div id="output" _msthidden="1">
+                <h2 data-i18n="ui.title.output" _msttexthash="5527249" _msthidden="1" _msthash="45">输出</h2>
+                <textarea readonly=""></textarea>
+            </div>
+
+            <div id="common-issue-link" data-i18n="ui.notes.somethingWrongWithOutput" _msttexthash="5340270" _msthidden="1" _msthash="46"><font _mstmutation="1" _msttexthash="38677418" _msthidden="1" _msthash="180">你的exe有问题? 阅读 </font><a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&amp;utm_medium=application_link&amp;utm_campaign=auto_py_to_exe_help&amp;utm_content=bottom" target="_blank" _msttexthash="175731179" _msthidden="1" _msthash="181">这篇文章是关于如何修复常见问题的 寻找可能的解决方案。</a></div>
+
+            <div id="package-button-wrapper">
+                <button id="package-button" data-i18n="ui.button.convert" _msttexthash="14828606" _msthash="47">将.PY转换为.EXE</button>
+                <button id="open-output-folder-button" data-i18n="ui.button.openOutputFolder" _msttexthash="20009314" _msthidden="1" _msthash="48">打开输出目录</button>
+            </div>
+        </div>
+
+        <div id="modal-area" class="modal-coverage modal-coverage-hidden"></div>
+
+        <div id="spinner-root" class="loading-spinner-wrapper" style="display: none;">
+            <div>
+                <div class="loading-spinner"></div>
+                <span class="loading-label" _msttexthash="12064559" _msthash="49">初始 化。。。</span>
+            </div>
+        </div>
+    
+
+<div id="fatkun-drop-panel">
+    <div id="fatkun-drop-panel-close-btn"><div id="error"></div></div>
+        <div id="fatkun-drop-panel-inner">
+            <div class="fatkun-content">
+            <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8946" width="48" height="48"><path d="M585.142857 572.562286l185.490286-185.417143a73.142857 73.142857 0 0 1 103.424 103.424L563.712 800.914286a72.923429 72.923429 0 0 1-103.424 0L149.942857 490.569143a73.142857 73.142857 0 0 1 103.424-103.424L438.857143 572.562286V73.142857a73.142857 73.142857 0 1 1 146.285714 0v499.419429zM73.142857 877.714286h877.714286a73.142857 73.142857 0 0 1 0 146.285714H73.142857a73.142857 73.142857 0 0 1 0-146.285714z" fill="#ffffff" p-id="8947"></path></svg>    
+            <div class="fatkun-title" _msttexthash="32929975" _msthash="50">拖拽到此处完成下载</div>
+            <!-- <div class="fatkun-desc">The image will be downloaded</div>  -->
+            </div>
+            <div id="fatkun-supported-by" _msttexthash="21506667" _msthash="51">AIX智能下载器</div>
+        </div>
+    </div><script src="chrome-extension://cdnlggbebabeoneeglhadpagegmflmbc/aiscripts/scriptBus.js"></script><span id="cnki_grabber" data-id="1714703794000" style="visibility: hidden;"></span><script></script><webchatgpt-custom-element-83ceb835-c865-483c-a869-dcec115803be id="webchatgpt-snackbar" style="color: rgb(255, 255, 255);"><template shadowrootmode="open"><style id="webchatgpt-snackbar-container-emotion-style"></style><div id="webchatgpt-snackbar-container" style="z-index: 2147483647;"></div></template></webchatgpt-custom-element-83ceb835-c865-483c-a869-dcec115803be></body></html>
